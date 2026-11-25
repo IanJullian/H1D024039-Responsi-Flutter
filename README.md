@@ -6,8 +6,8 @@
 |---|---|
 | Nama Lengkap | Ian Jullian Sutrisno |
 | NIM | H1D024039 |
-| Shift Awal | C |
-| Shift Akhir | I |
+| Shift Awal | I |
+| Shift Akhir | C |
 | Mata Praktikum | Responsi Flutter - Praktikum Pemrograman Mobile |
 
 ---
