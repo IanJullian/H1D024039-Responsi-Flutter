@@ -64,6 +64,7 @@ class LocationViewModel extends ChangeNotifier {
 
     _isSearching = true;
     _searchError = null;
+    _searchResults = [];
 
     notifyListeners();
 

@@ -130,6 +130,20 @@ test/
 
 CuacaKu menggunakan dua layanan REST API dari Open-Meteo.
 
+### Metode Request dan Pengolahan Respons
+
+Kedua layanan API diakses menggunakan metode HTTP GET
+dengan package `http`.
+
+Respons API diterima dalam format JSON, kemudian diolah
+menggunakan `jsonDecode()` dan dikonversi menjadi objek
+Dart melalui factory constructor `fromJson()` pada model
+data.
+
+Proses komunikasi API dan pengolahan respons dilakukan
+pada folder `services/`, sedangkan pengelolaan data
+dilakukan melalui folder `models/`.
+
 ### 1. Weather Forecast API
 
 Endpoint:
