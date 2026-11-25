@@ -1,5 +1,17 @@
 # 🌤️ CuacaKu — Aplikasi Informasi Cuaca
 
+## Identitas Mahasiswa
+
+| Keterangan | Identitas |
+|---|---|
+| Nama Lengkap | Ian Jullian Sutrisno |
+| NIM | H1D024039 |
+| Shift Awal | C |
+| Shift Akhir | I |
+| Mata Praktikum | Responsi Flutter - Praktikum Pemrograman Mobile |
+
+---
+
 CuacaKu merupakan aplikasi mobile berbasis Flutter yang digunakan untuk melihat informasi cuaca terkini dan prakiraan cuaca selama tujuh hari berdasarkan lokasi yang dipilih pengguna.
 
 Aplikasi ini dikembangkan menggunakan REST API dari Open-Meteo dengan menerapkan arsitektur Model-View-ViewModel (MVVM), pengelolaan state menggunakan Provider, serta penyimpanan lokasi favorit secara lokal menggunakan SharedPreferences.
@@ -132,17 +144,11 @@ CuacaKu menggunakan dua layanan REST API dari Open-Meteo.
 
 ### Metode Request dan Pengolahan Respons
 
-Kedua layanan API diakses menggunakan metode HTTP GET
-dengan package `http`.
+Kedua layanan API diakses menggunakan metode HTTP GET dengan package `http`.
 
-Respons API diterima dalam format JSON, kemudian diolah
-menggunakan `jsonDecode()` dan dikonversi menjadi objek
-Dart melalui factory constructor `fromJson()` pada model
-data.
+Respons API diterima dalam format JSON, kemudian diolah menggunakan `jsonDecode()` dan dikonversi menjadi objek Dart melalui factory constructor `fromJson()` pada model data.
 
-Proses komunikasi API dan pengolahan respons dilakukan
-pada folder `services/`, sedangkan pengelolaan data
-dilakukan melalui folder `models/`.
+Proses komunikasi API dan pengolahan respons dilakukan pada folder `services/`, sedangkan pengelolaan data dilakukan melalui folder `models/`.
 
 ### 1. Weather Forecast API
 
