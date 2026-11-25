@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../core/constants/weather_condition.dart';
 import '../../models/weather_model.dart';
 import '../../viewmodels/location_viewmodel.dart';
 import '../../viewmodels/weather_viewmodel.dart';
+import '../../widgets/forecast_card.dart';
 import '../search/search_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -137,6 +139,8 @@ class HomeScreen extends StatelessWidget {
               if (weather != null) ...[
                 const SizedBox(height: 20),
                 _buildWeatherCard(context, weather),
+                const SizedBox(height: 24),
+                ForecastCard(forecast: weather.daily),
               ],
               const SizedBox(height: 16),
               Card(
@@ -167,6 +171,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget _buildWeatherCard(BuildContext context, WeatherModel weather) {
     final current = weather.current;
+    final condition = WeatherCondition.fromCode(current.weatherCode);
 
     return Card(
       elevation: 0,
@@ -185,7 +190,7 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.cloud_rounded,
+                  condition.icon,
                   size: 56,
                   color: Theme.of(context).colorScheme.primary,
                 ),
@@ -197,6 +202,10 @@ class HomeScreen extends StatelessWidget {
                       Text(
                         '${current.temperature2m?.toStringAsFixed(1) ?? '--'}°C',
                         style: Theme.of(context).textTheme.headlineLarge,
+                      ),
+                      Text(
+                        condition.description,
+                        style: Theme.of(context).textTheme.titleMedium,
                       ),
                       Text(
                         'Terasa seperti '
